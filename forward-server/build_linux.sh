@@ -1,11 +1,12 @@
 #!/bin/sh
 
-export GoDevWork=/Users/tavenli/Desktop/Work/port-forward-v2
+#export GoDevWork=/Users/tavenli/Desktop/Work/port-forward-v2
 
 echo "Build For Linux..."
+#export GOOS=windows
 export GOOS=linux
 export GOARCH=amd64
-export GOPATH=${GoDevWork}:${GOPATH}
+#export GOPATH=${GoDevWork}:${GOPATH}
 go build -o forward-server
 
 echo "--------- Build For Linux Success!"

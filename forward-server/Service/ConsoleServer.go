@@ -8,7 +8,7 @@ import (
 )
 
 type ConsoleServer struct {
-
+	Params string
 }
 
 func (_self *ConsoleServer) StartHttpServer() {
@@ -27,7 +27,6 @@ func (_self *ConsoleServer) StartHttpServer() {
 	logs.Debug("Http 服务启动...")
 
 	//启动应用
-	beego.Run()
-
+	beego.Run(_self.Params)
 
 }

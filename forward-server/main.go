@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"forward-server/Service"
 	_ "forward-server/routers"
+	"os"
 
 	"forward-core/Models"
 
@@ -43,6 +44,9 @@ func main() {
 	logs.Debug("★★★★★★★★★★★★★★★★★★★★")
 
 	//test1()
+	if len(os.Args) >= 2 {
+		Service.ConsoleServ.Params = os.Args[1]
+	}
 
 	//启动Web控制台和接口
 	Service.ConsoleServ.StartHttpServer()
